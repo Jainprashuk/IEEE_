@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+	<script src="https://cdn.tailwindcss.com"></script>
+	<link rel="stylesheet" href="style.css">
+	
+</head>
+
+<body class="bg-gray-100">
+
+	<!-- navbar start -->
+	<nav class="bg-gray-300 mb-8 ">
+		<div class="container mx-auto px-4">
+
+			<div class="flex items-center justify-between h-16">
+				<div class="flex items-center">
+					<a href="#" class="text-orange-500 text-xl font-semibold ml-10">IEEE LPU</a>
+				</div>
+				<div class=" hidden md:flex mr-12 border-l-2 border-orange-500">
+					<div>
+						<a href="#" id="home-link"
+							class="text-gray-900 border-b-2 border-orange-500  hover:border hover:border-orange-500 hover:border-2 ml-6 px-3 py-2 hover:rounded-md">Home</a>
+					</div>
+					<div>
+						<a href="./events.html" id="events-link"
+							class="text-gray-900  hover:border hover:border-orange-500 hover:border-2 ml-6 px-3 py-2 rounded-md">Events</a>
+					</div>
+					<div>
+						<a href="./team.html" id="team-link"
+							class="text-gray-900  hover:border hover:border-orange-500 hover:border-2 ml-6 px-3 py-2 rounded-md">Team</a>
+					</div>
+					<button class="text-white font-medium rounded-lg text-sm ml-3 " type="button"
+						data-drawer-target="drawer-example" data-drawer-show="drawer-example"
+						aria-controls="drawer-example">
+						<i class="fa-solid fa-2x fa-bullhorn text-gray-900 hover:text-red-500"></i>
+					</button>
+				</div>
+				<div class="md:hidden">
+					<button id="mobile-menu-toggle" class="text-grey-900 hover:text-white focus:outline-none">
+						<svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+								d="M4 6h16M4 12h16M4 18h16"></path>
+						</svg>
+					</button>
+				</div>
+			</div>
+
+			<div id="mobile-menu" class="md:hidden hidden">
+				<div class="px-2 pt-2 pb-3 sm:px-3">
+					<a href="#" class="block text-gray-900 hover:text-white px-3 py-2 rounded-md">Home</a>
+					<a href="./events.html" class="block text-gray-900 hover:text-white px-3 py-2 rounded-md">Events</a>
+					<a href="./team.html" class="block text-gray-900 hover:text-white px-3 py-2 rounded-md">Team</a>
+				</div>
+			</div>
+		</div>
+	</nav>
+
+	<!-- announcement drawer component -->
+	<div id="drawer-example"
+		class="fixed top-0 left-0 z-40 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-white w-80 dark:bg-gray-800"
+		tabindex="-1" aria-labelledby="drawer-label">
+		<h5 id="drawer-label" class="text-2xl inline-flex items-center mb-4 text-center  font-semibold text-gray-900 ">
+			Announcements</h5>
+		<button type="button" data-drawer-hide="drawer-example" aria-controls="drawer-example"
+			class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 right-2.5 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white">
+			<svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+				xmlns="http://www.w3.org/2000/svg">
+				<path fill-rule="evenodd"
+					d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+					clip-rule="evenodd"></path>
+			</svg>
+			<span class="sr-only">Close menu</span>
+		</button>
+		<div class="announcements">
+			<p class="mb-6 text-sm text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing
+				elit. Esse accusantium quo dolorum ullam iure dolorem non delectus hic quidem laudantium? Magnam magni
+				repudiandae consequuntur ut exercitationem impedit facilis dignissimos velit!.
+			</p>
+		</div>
+		<hr>
+	</div>
+
+	<!-- navbar end -->
+
+	<!-- <section class="mx-8 rounded-lg mb-5  bg-white dark:bg-gray-900">
+		<div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
+			<div class="mr-auto place-self-center lg:col-span-7">
+				<h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">Payments tool for software companies</h1>
+				<p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">From checkout to global sales tax compliance, companies around the world use Flowbite to simplify their payment stack.</p>
+				<a href="#" class="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
+					Get started
+					<svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+				</a>
+				<a href="#" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+					Speak to Sales
+				</a> 
+			</div>
+			<div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
+				<img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/phone-mockup.png" alt="mockup">
+			</div>                
+		</div>
+	</section> -->
+
+	<!------------------------------------------------------------------------------------------------------------------------------------------>
+
+	<!-- container 1 start  -->
+
+	<div class="flex">
+
+		<div
+			class="bg-gray-300 w-1/12 hidden md:block py-12 lg:py-4 border-t-8 border-white border-solid rounded-r-xl rounded-tr-3xl">
+			<!-- Sidebar Content -->
+			<div class="flex flex-col justify-between h-full px-2">
+				<div class="my-auto flex items-center justify-center flex-col">
+					<!-- Logo 1 -->
+					<img class="h-16 mb-4" src="./resources/pngwing.com.png" alt="Logo 1">
+					<!-- Logo 2 -->
+					<img class="h-12 mb-4" src="./resources/github-mark.png" alt="Logo 2">
+					<!-- Logo 3 -->
+					<img class="h-16 mb-4" src="./resources/insta.png" alt="Logo 3">
+				</div>
+			</div>
+		</div>
+
+		<div class="bg-gray-100 flex-grow sm:py-12 md:w-full lg:py-4">
+			<!-- Main Content -->
+			<div class="mx-auto max-w-screen-2xl px-4 md:px-6">
+				<section class="flex flex-col justify-between gap-6 sm:gap-10 md:gap-16 lg:flex-row">
+					<!-- content - start -->
+					<div class="flex flex-col justify-center sm:text-center lg:py-10 lg:text-left xl:w-5/12 xl:py-24">
+						<p class="mb-2 text-center font-semibold text-indigo-500 md:mb-6 md:text-lg xl:text-xl">
+							Very proud to introduce
+						</p>
+						<p class="mb-4 text-center  font-semibold text-orange-500 md:mb-6 md:text-xl xl:text-2xl">
+							LPU <span class="text-orange-900 "><u>LARGEST TECHNO</u></span> Proffesional Organisation
+						</p>
+						<h1 id="animated-text"
+							class="text-black-800 text-center mb-4 text-4xl font-bold sm:text-5xl md:mb-12 md:text-6xl">
+							<!-- IEEE CIS LPU -->
+						</h1>
+						<div class="flex mx-auto flex-col items-center sm:flex-row sm:justify-center lg:justify-start">
+							<a href="#"
+								class="inline-block rounded-lg bg-indigo-600 px-8 py-3 text-center text-sm font-semibold text-gray-100 outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-400 focus-visible:ring active:text-gray-700 md:text-base flex justify-center">
+								Join Us
+							</a>
+						</div>
+					</div>
+					<!-- content - end -->
+
+					<!-- image - start -->
+					<!-- <div
+						class="custom-image h-48 overflow-hidden rounded-lg bg-gray-100 shadow-lg lg:h-auto xl:w-5/12    mx-auto mb-5">
+						<img src="./resources/Screenshot (1).png"
+							loading="lazy" alt="Photo by Fakurian Design"
+							class="h-full w-full object-cover object-center" />
+					</div> -->
+					<div
+						class="custom-image h-48 border-4 overflow-hidden rounded-full bg-gray-100 shadow-lg lg:h-auto xl:w-5/12    mx-auto mb-5">
+						<img src="./resources/Screenshot (1).png"
+							loading="lazy" alt="Photo by Fakurian Design"
+							class="h-full w-full  object-center" />
+					</div>
+					
+					  
+					
+					  
+											
+					  
+					<!-- image - end -->
+				</section>
+			</div>
+		</div>
+	</div>
+
+	<!-- container 1 end -->
+
+	<!------------------------------------------------------------------------------------------------------------------->
+
+	<div class="scroll-element max-w-11/12 border-4 border-orange-500 rounded w-1/4 center mx-auto"></div>
+
+
+	<!------------------------------------------------------------------------------------------------------------------->
+
+	<!-- container 2 start -->
+	<div class="flex mt-5 mb-5">
+		<div class="bg-gray-100 flex-grow sm:py-12 md:w-full lg:py-4 ">
+			<!-- Main Content -->
+			<div class="mx-auto max-w-screen-2xl px-4 md:px-8">
+				<div class="bg-white py-6 sm:py-8 lg:py-12">
+					<div class="mx-auto max-w-screen-xl px-4 md:px-8">
+						<div class="grid gap-8 md:grid-cols-2 lg:gap-12">
+							<div class="md:pt-8">
+								<!-- <p class="text-center font-bold text-indigo-500 md:text-left">Who we are</p> -->
+								<h2
+									class="mb-2 text-center text-xl font-semibold text-gray-800 sm:text-2xl md:mb-4 md:text-left">
+									About LPU</h2>
+								<p class="mb-6 text-gray-500 sm:text-lg md:mb-8">Lorem ipsum dolor sit amet consectetur
+									adipisicing elit. Totam recusandae amet, vitae consequatur modi, mollitia omnis
+									nesciunt veniam numquam id quis animi, molestiae minus porro ipsa iusto. Ab ipsum
+									unde tenetur ratione adipisci, incidunt asperiores obcaecati consectetur maxime,
+									quibusdam fuga.</p>
+							</div>
+							<div>
+								<div class="h-72 overflow-hidden rounded-lg bg-gray-100 shadow-lg">
+									<img src="./resources/lpu.jpg"
+										loading="lazy" alt="Photo by Martin Sanchez"
+										class="h-full w-full object-cover object-center" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<div class="bg-gray-300 w-1/12 hidden md:block py-12 lg:py-4 rounded-l-xl  rounded-tl-3xl">
+			<div class="flex flex-col justify-between h-full px-2">
+				<div class="my-auto flex items-center justify-center flex-col text-orange-500">
+					<h1 class="text-4xl  hover:uppercase whitespace-nowrap transform -rotate-90">About LPU</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- container 2 end -->
+
+<!------------------------------------------------------------------------------------------------------------------->
+
+	<div class="scroll-element border-4 border-orange-500 rounded w-1/4 center mx-auto"></div>
+	
+
+<!------------------------------------------------------------------------------------------------------------------->
+
+
+	<!-- container 3 start -->
+	<div class="flex mt-5 mb-5">
+		<div class="bg-gray-300 w-1/12 hidden md:block py-12 lg:py-4 rounded-r-xl  rounded-rl-3xl">
+			<div class="flex flex-col justify-between h-full px-2">
+				<div class="my-auto flex items-center justify-center flex-col text-orange-500">
+					<h1 class="text-4xl  hover:uppercase whitespace-nowrap transform -rotate-90">About IEEE</h1>
+				</div>
+			</div>
+		</div>
+		<div class="bg-gray-100 flex-grow sm:py-12 md:w-full lg:py-4 ">
+			<!-- Main Content -->
+			<div class="mx-auto max-w-screen-2xl px-4 md:px-8">
+				<div class="bg-white py-6 sm:py-8 lg:py-12">
+					<div class="mx-auto max-w-screen-xl px-4 md:px-8">
+						<div class="grid gap-8 md:grid-cols-2 lg:gap-12">
+							<div class="flex">
+								<div class="h-72 overflow-hidden rounded-lg bg-gray-100  my-auto  shadow-lg ">
+									<img src="./resources/ieee.jpg"
+										loading="lazy" alt="Photo by Martin Sanchez"
+										class="h-full w-full  object-cover object-center" />
+								</div>
+							</div>
+							<div class="md:pt-8">
+								<h2
+									class="mb-2 text-center text-xl font-semibold text-gray-800 sm:text-2xl md:mb-4 md:text-left">
+									About IEEE</h2>
+
+								<p class="mb-6 text-gray-500 sm:text-lg md:mb-8">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus harum culpa doloremque voluptates minus sapiente id molestiae fugiat, consectetur quo eum eius! Vero, labore eius quas ratione ea dolorum minima!
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- container 3 end  -->
+
+
+<!------------------------------------------------------------------------------------------------------------------->
+
+	<div class="scroll-element border-4 border-orange-500 rounded w-1/4 center mx-auto"></div>
+
+<!------------------------------------------------------------------------------------------------------------------->
+
+	<!-- container 4 start -->
+	<div class="flex mt-5 mb-5">
+		<div class="bg-gray-100 flex-grow sm:py-12 md:w-full lg:py-4 ">
+			<!-- Main Content -->
+			<div class="mx-auto max-w-screen-2xl px-4 md:px-8">
+				<div class="bg-white py-6 sm:py-8 lg:py-12">
+					<div class="mx-auto max-w-screen-xl px-4 md:px-8">
+						<div class="grid gap-8 md:grid-cols-2 lg:gap-12">
+							<div class="md:pt-8">
+								<h2
+									class="mb-2 text-center text-xl font-semibold text-gray-800 sm:text-2xl md:mb-4 md:text-left">
+									About IEEE lpu</h2>
+								<p class="mb-6 text-gray-500 sm:text-lg md:mb-8">Lorem ipsum dolor sit amet consectetur
+									adipisicing elit. Molestiae inventore tempore quod quibusdam id sequi recusandae
+									cumque nostrum! Provident possimus ipsum iusto pariatur delectus itaque inventore
+									atque fugit iure libero vero officia cumque necessitatibus eaque eius maiores,
+									praesentium, iste dicta.</p>
+							</div>
+							<div>
+								<div class="h-72 overflow-hidden rounded-lg bg-gray-100 shadow-lg">
+									<img src="./resources/Screenshot (1).png"
+										loading="lazy" alt="Photo by Martin Sanchez"
+										class="h-full w-full object-cover object-center" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<div class="bg-gray-300 w-1/12 hidden md:block py-12 lg:py-4 rounded-l-xl  rounded-tl-3xl">
+			<div class="flex flex-col justify-between h-full px-2">
+				<div class="my-auto flex items-center justify-center flex-col text-orange-500">
+					<h1 class="text-4xl  hover:uppercase whitespace-nowrap transform -rotate-90">About IEEE LPU</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<!------------------------------------------------------------------------------------------------------------------->
+
+<div class="scroll-element border-4 border-orange-500 rounded w-1/4 center mx-auto"></div>
+
+<!------------------------------------------------------------------------------------------------------------------->
+
+	<!-- container 5 start -->
+	<div class="flex flex-col md:flex-row mt-5 mb-5 ">
+		<div class="bg-gray-300 w-1/12 hidden md:block py-12 lg:py-4 rounded-r-xl  rounded-rl-3xl">
+			<div class="flex flex-col justify-between h-full px-2">
+				<div class="my-auto flex items-center justify-center flex-col text-orange-500">
+					<h1 class="text-4xl  hover:uppercase whitespace-nowrap transform -rotate-90">Our Team</h1>
+				</div>
+			</div>
+		</div>
+		<div class="bg-gray-100 flex-grow sm:py-4 md:w-11/12  lg:py-2 ">
+			<!-- Main Content -->
+			<div class="mx-auto  px-4 md:px-8">
+				<div
+					class="flex bg-white items-center justify-start w-11/12 h-11/12 gap-6 py-2 mx-auto overflow-auto lg:gap-8">
+					<div class="relative flex flex-shrink-0 w-full sm:w-auto p-10">
+						<div
+							class="group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30">
+							<div class="h-96 w-72">
+								<img class="h-full w-full object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125"
+									src="./resources/sampleprofile.jpg"
+									alt="" />
+							</div>
+							<div
+								class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70">
+							</div>
+							<div
+								class="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0">
+								<h1 class="font-dmserif pb-14 text-xl font-bold text-white">Dr. Prateek Agrawal</h1>
+								<p
+									class="mb-3 text-3xl italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+									Advisor
+								</p>
+								<p
+									class="mb-3 text-2xl italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+									IEEE CHAPTER LPU
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="relative flex flex-shrink-0 w-full sm:w-auto">
+						<div
+							class="group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30">
+							<div class="h-96 w-72">
+								<img class="h-full w-full object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125"
+									src="./resources/sampleprofile.jpg"
+									alt="" />
+							</div>
+							<div
+								class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70">
+							</div>
+							<div
+								class="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0">
+								<h1 class="font-dmserif pb-14 text-xl font-bold text-white">Dr. Usha Mittal</h1>
+								<p
+									class="mb-3 text-3xl italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+									Co-Advisor
+								</p>
+								<p
+									class="mb-3 text-2xl italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+									IEEE CHAPTER LPU
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="relative flex flex-shrink-0 w-full sm:w-auto">
+						<div
+							class="group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30">
+							<div class="h-96 w-72">
+								<img class="h-full w-full object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125"
+									src="./resources/sampleprofile.jpg"
+									alt="" />
+							</div>
+							<div
+								class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70">
+							</div>
+							<div
+								class="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0">
+								<h1 class="font-dmserif text-xl font-bold text-white">Mr. Ravi shankar</h1>
+								<p
+									class="mb-3 text-3xl italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+									Executive Committee Member
+								</p>
+								<p
+									class="mb-3 text-2xl italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+									IEEE CHAPTER LPU
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="relative flex flex-shrink-0 w-full sm:w-auto">
+						<div
+							class="group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30">
+							<div class="h-96 w-72">
+								<img class="h-full w-full object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125"
+									src="./resources/sampleprofile.jpg"
+									alt="" />
+							</div>
+							<div
+								class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70">
+							</div>
+							<div
+								class="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0">
+								<h1 class="font-dmserif pb-14 text-xl font-bold text-white">MRS. Harjeet Mam</h1>
+								<p
+									class="mb-3 text-3xl italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+									Advisor
+								</p>
+								<p
+									class="mb-3 text-2xl italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+									IEEE CHAPTER LPU
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="relative flex flex-shrink-0 w-full sm:w-auto">
+						<div
+							class="group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30">
+							<div class="h-96 w-72">
+								<img class="h-full w-full object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125"
+									src="./resources/team2.jpg"
+									alt="" />
+							</div>
+							<div
+								class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70">
+							</div>
+							<div
+								class="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0">
+								<h1 class="font-dmserif pb-14 text-xl font-bold text-white">More</h1>
+								<p
+									class="mb-3 text-md italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+									View compleate Student Commetitee
+								</p>
+								<p
+									class="mb-3 text-2xl italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+									IEEE CHAPTER LPU
+								</p>
+								<a href="./team.html"><button
+										class="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-sm capitalize text-white shadow shadow-black/60">
+										More</button></a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	
+	<!-- container 5 end  -->
+
+
+<!------------------------------------------------------------------------------------------------------------------->
+
+	<div class="scroll-element mb-8  border-4 border-orange-500 rounded w-1/4 center mx-auto"></div>
+
+
+
+
+
+	<div class="flex mt-1 mb-5">
+		<div class="bg-gray-100 flex-grow sm:py-12 md:w-full lg:py-4 ">
+			<!-- Main Content -->
+			<div class="mx-auto max-w-screen-2xl px-4 md:px-8">
+				<div class="bg-white py-6 sm:py-8 lg:py-12">
+					
+		
+	<div class="container  mx-auto md:px-6">
+		<!-- Section: Design Block -->
+		<section class="text-center">
+		  <div class=" md:px-12">
+			<div class="container mx-auto ">
+			  <div class="grid items-center lg:grid-cols-2">
+				<div class=" md:mt-12 lg:mt-0 lg:mb-0">
+				  <div
+					class="relative z-[1] block rounded-lg bg-[hsla(0,0%,100%,0.55)] px-6 py-8 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] backdrop-blur-[30px] dark:bg-[hsla(0,0%,5%,0.7)] dark:shadow-black/20 md:px-12 lg:-mr-14">
+					<h2 class="mb-2 text-3xl font-bold">Contact us</h2>
+					<h1>For Any Querries Mail Us At</h1>
+					<p>abc@gmail.com</p>
+					</form>
+				  </div>
+				</div>
+				<div class="md:mb-12 lg:mb-0">
+				  <div
+					class="relative h-[300px] rounded-lg shadow-lg dark:shadow-black/20">
+					<iframe
+					  src="https://maps.google.com/maps?q=Lovely%20Professional%20University%2C%20Punjab%2C%20India&t=&z=13&ie=UTF8&iwloc=&output=embed"
+					  class="absolute left-0 top-0 h-full w-full rounded-lg"
+					  frameborder="0"
+					  allowfullscreen></iframe>
+				  </div>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</section>
+	  </div>
+	  <!-- Container for demo purpose -->
+				</div>
+			</div>
+	
+		</div>
+		<div class="bg-gray-300 w-1/12 hidden md:block py-12 lg:py-4 rounded-l-xl  rounded-tl-3xl">
+			<div class="flex flex-col justify-between h-full px-2">
+				<div class="my-auto flex items-center justify-center flex-col text-orange-500">
+					<h1 class="text-4xl  hover:uppercase whitespace-nowrap transform -rotate-90">Contact Us</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+
+<!------------------------------------------------------------------------------------------------------------------->
+
+
+	<div class=" p-4 sm:pt-10 lg:pt-12 bg-gray-900 pb-10 text-center text-sm text-gray-400 my-auto">
+		<footer class="mx-auto max-w-screen-2xl px-4 md:px-8 bg-gray-900">
+			<div class="flex flex-col items-center border-t pt-6">
+				<!-- nav - start -->
+				<nav class="mb-4 flex flex-wrap justify-center gap-x-4 gap-y-2 md:justify-start md:gap-6">
+					<a href="https://www.ieee.org/" target="_blank"
+						class="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600">IEEE</a>
+					<a href="https://www.lpu.in/#" target="_blank"
+						class="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600">LPU
+						</a>
+					<a href="./index.html"
+						class="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600">IEEE LPU</a>
+					<a href="./team.html"
+						class="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600">OUR TEAM</a>
+					<a href="./events.html"
+						class="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600">Events</a>
+				</nav>
+				<!-- nav - end -->
+
+				<!-- social - start -->
+				<div class="flex gap-4">
+					<a href="#" target="_blank"
+						class="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600">
+						<svg class="h-5 w-5" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+						</svg>
+					</a>
+
+					<a href="#" target="_blank"
+						class="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600">
+						<svg class="h-5 w-5" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+						</svg>
+					</a>
+
+					<a href="#" target="_blank"
+						class="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600">
+						<svg class="h-5 w-5" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+						</svg>
+					</a>
+				</div>
+				<!-- social - end -->
+			</div>
+		</footer>
+	</div>
+
+
+
+<!------------------------------------------------------------------------------------------------------------------->
+
+
+	<script src="index.js"></script>
+	<script src="https://kit.fontawesome.com/5a445330f4.js" crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
